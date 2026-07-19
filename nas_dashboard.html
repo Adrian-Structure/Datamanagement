@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="5">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAS-Migration · Dashboard</title>
+<style>
+:root{--bg:#0b0f14;--card:#131a22;--line:#22303c;--tx:#e8eef5;--mut:#7d90a3;--acc:#3ea6ff;--ok:#35d07f;--fail:#ff5c5c;--warn:#ffb020}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:28px}
+.wrap{max-width:920px;margin:0 auto}
+h1{font-size:22px;font-weight:600;margin:0 0 4px;letter-spacing:.2px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:22px}
+.b{font-size:13px;padding:3px 10px;border-radius:999px;font-weight:600}
+.b.run{background:rgba(62,166,255,.15);color:var(--acc)}
+.b.done{background:rgba(53,208,127,.15);color:var(--ok)}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:18px}
+.phase{font-size:15px;color:var(--mut);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.big{font-size:64px;font-weight:700;line-height:1;letter-spacing:-1px}
+.big small{font-size:22px;color:var(--mut);font-weight:500;margin-left:8px}
+.pbar{height:26px;background:#0a1017;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:20px 0 8px}
+.pbar>i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),#6fd3ff);border-radius:999px;transition:width .6s ease}
+.gbrow{display:flex;justify-content:space-between;color:var(--mut);font-size:14px}
+.stats{display:flex;gap:16px;margin-top:22px}
+.stat{flex:1;background:#0a1017;border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat .k{color:var(--mut);font-size:13px}.stat .v{font-size:26px;font-weight:700;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+.ct{font-size:14px;color:var(--mut);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
+.wrow{display:flex;align-items:center;gap:14px;margin:9px 0}
+.wlab{width:200px;font-size:14px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wlab .j{color:var(--mut)}
+.wbar{flex:1;height:12px;background:#0a1017;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.wbar>i{display:block;height:100%;background:linear-gradient(90deg,#2b7fd0,var(--acc));transition:width .6s ease}
+.wval{width:90px;text-align:right;font-size:13px;color:var(--mut);font-variant-numeric:tabular-nums}
+.vbar{height:14px;background:#0a1017;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-bottom:12px}
+.vbar>i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#7ee9b0);transition:width .6s ease}
+.vrow{display:flex;gap:20px;font-size:15px}.vrow .ok{color:var(--ok)}.vrow .fail{color:var(--fail)}.vrow .muted{color:var(--mut)}
+.foot{color:var(--mut);font-size:12px;text-align:center;margin-top:20px}
+</style></head><body><div class="wrap">
+<h1>NAS-Migration · SSD → NAS</h1>
+<div class="sub">Quelle (SSD) → Ziel (NAS-Share)</div>
+<div class="hero">
+  <div class="phase"><span>Phase: <b style="color:var(--tx)">Kopie läuft</b></span><span class="b run">● läuft</span></div>
+  <div class="big">kalibriere…</div>
+  <div class="pbar"><i style="width:15%"></i></div>
+  <div class="gbrow"><span>0.0 GB kopiert</span><span>von 1265.3 GB</span></div>
+  <div class="stats">
+    <div class="stat"><div class="k">Durchsatz (aggregiert)</div><div class="v">0.0 <small style="font-size:14px;color:var(--mut)">MB/s</small></div></div>
+    <div class="stat"><div class="k">Verbleibend (ETA)</div><div class="v">—</div></div>
+  </div>
+</div>
+<div class="card"><div class="ct">Parallele Worker (4)</div><div class="wrow"><div class="wlab">W0 · <span class="j">fertig</span></div><div class="wbar"><i style="width:0%"></i></div><div class="wval">0.0 GB</div></div><div class="wrow"><div class="wlab">W1 · <span class="j">Cinema</span></div><div class="wbar"><i style="width:0%"></i></div><div class="wval">0.0 GB</div></div><div class="wrow"><div class="wlab">W2 · <span class="j">Freecom</span></div><div class="wbar"><i style="width:0%"></i></div><div class="wval">0.0 GB</div></div><div class="wrow"><div class="wlab">W3 · <span class="j">Musik</span></div><div class="wbar"><i style="width:0%"></i></div><div class="wval">0.0 GB</div></div></div>
+<div class="card"><div class="ct">Verifikation (SHA-256, 14 Kerne)</div>
+      <div class="vbar"><i style="width:0%"></i></div>
+      <div class="vrow"><span class="ok">✔ OK: 79</span><span class="fail">✘ Fehler: 0</span><span class="muted">von 0</span></div></div>
+<div class="foot">Aktualisiert: 2026-07-19 13:18:13 · Auto-Refresh alle 5 s · erneut öffnen: open ~/nas_dashboard.html</div>
+</div></body></html>
