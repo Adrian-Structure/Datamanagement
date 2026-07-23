@@ -5,7 +5,7 @@ license: "Proprietary. LICENSE.txt has complete terms."
 compatibility: "Universal. Optional script (scripts/generate_prompts.py) needs Python 3 stdlib only — no packages, no network access."
 metadata:
   author: "Roberto Adrian"
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Website Builder
@@ -44,6 +44,20 @@ That's what's kept here; copywriting theory is not.
    Impressum, Datenschutzerklärung and cookie-consent review before go-live. Do not
    duplicate that check here. If `website-dsgvo` is not installed in this environment, say
    so explicitly — do not silently skip it.
+
+## What this produces — and what it doesn't
+
+Running the script or the config build gives you a **code scaffold with generated copy
+filled in** in minutes to about an hour of agent runtime. That is not the same claim as "a
+finished, launchable website in a day," and this skill does not make that claim. Still
+needed before go-live, and none of it is fast: real photography and business-owner-approved
+final copy, real reviews (never fabricate testimonials or ratings), legal sign-off on
+Impressum/Datenschutz text (the `website-dsgvo` handoff covers the technical scaffold, not
+a lawyer's review), domain/DNS/hosting, a real email/API integration actually wired in and
+tested (not just an env var placeholder), a client revision cycle, cross-device QA, and
+organic SEO ranking — which takes months, not a build run. Tell the user this distinction
+up front; presenting the scaffold as a launch-ready site is the same overclaim this skill
+exists to avoid repeating.
 
 ## Troubleshooting
 
