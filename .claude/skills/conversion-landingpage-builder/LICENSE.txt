@@ -1,0 +1,31 @@
+PROPRIETARY LICENSE
+
+Copyright (c) 2026 Roberto Adrian. All rights reserved.
+
+This skill package (the "Software"), including SKILL.md and all files in its
+folder, is licensed, not sold.
+
+1. GRANT. Upon purchase, the buyer receives a non-exclusive, non-transferable
+   license to install and use the Software with AI agents operated by the buyer
+   or the buyer's organization, on any number of the buyer's own machines.
+
+2. RESTRICTIONS. The buyer may NOT:
+   - redistribute, resell, sublicense, rent, or lend the Software;
+   - publish the Software or substantial parts of it (repositories, websites,
+     marketplaces, forums);
+   - remove or alter this license, copyright notices, or version metadata;
+   - use the Software to create a competing skill product that is substantially
+     derived from it.
+
+3. INTERNAL MODIFICATION. The buyer may adapt the Software for internal use.
+   Modified copies remain subject to this license and may not be distributed.
+
+4. OWNERSHIP. The Software remains the property of Roberto Adrian. No rights
+   are granted except those stated above.
+
+5. NO WARRANTY. The Software is provided "AS IS", without warranty of any kind,
+   express or implied. In no event shall the author be liable for any claim,
+   damages, or other liability arising from the use of the Software.
+
+6. TERMINATION. This license terminates automatically upon breach of any of
+   its terms. Upon termination, the buyer must delete all copies.
