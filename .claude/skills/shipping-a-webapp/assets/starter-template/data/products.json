@@ -1,0 +1,36 @@
+[
+ {
+  "slug": "demo-product-one",
+  "step": 1,
+  "title": {
+   "de": "Demo-Produkt Eins",
+   "en": "Demo Product One"
+  },
+  "desc": {
+   "de": "Beispielbeschreibung — wird im Individualisierungs-Schritt ersetzt.",
+   "en": "Sample description — replaced during the individualization step."
+  },
+  "color": "#58a6ff",
+  "image": null,
+  "voice": {},
+  "price": null,
+  "extra": false
+ },
+ {
+  "slug": "demo-product-two",
+  "step": 2,
+  "title": {
+   "de": "Demo-Produkt Zwei",
+   "en": "Demo Product Two"
+  },
+  "desc": {
+   "de": "Zweites Beispiel — Kacheln, Detailseite, Kauf und Bewertungen funktionieren sofort.",
+   "en": "Second sample — cards, detail page, purchase and reviews work out of the box."
+  },
+  "color": "#4DFF88",
+  "image": null,
+  "voice": {},
+  "price": null,
+  "extra": false
+ }
+]
