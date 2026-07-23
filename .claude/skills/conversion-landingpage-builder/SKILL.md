@@ -1,11 +1,11 @@
 ---
 name: conversion-landingpage-builder
-description: "Builds a high-converting SaaS or product landing page by decomposing it into one focused prompt per section (hero, problem/solution, features+benefits, how-it-works, social proof, pricing, final CTA+footer) instead of one giant prompt, each following a tested, audience-specific formula with a single primary call-to-action. Includes a script that generates the full 7-prompt sequence from a short product brief. Use when the user asks to 'build a landing page', 'erstelle eine Landingpage', wants a 'conversion page', 'sales page', 'B2B SaaS landing page', asks for hero/problem-solution/pricing/testimonial sections, or wants to turn a product idea into a page for Base44, v0, Bolt, Lovable, or plain HTML/Claude Code. Do NOT use for purely informational pages without a conversion goal, blog posts, or pure visual/graphic-design requests without copy."
+description: "Builds a single-offer landing page for a brand the visitor does not yet trust (free-trial signup, demo request) by decomposing it into one focused prompt per section (hero, problem/solution, features+benefits, how-it-works, social proof, pricing, final CTA+footer) instead of one giant prompt, each with a single CTA. Includes a script generating the 7-prompt sequence from a brief, and a reality-check against real homepages for when the formula applies. Use when the user asks to 'build a landing page', 'erstelle eine Landingpage', wants a 'conversion page', 'sales page', 'B2B SaaS landing page', asks for hero/problem-solution/pricing/testimonial sections, or wants a product idea turned into a page for Base44, v0, Bolt, Lovable, or plain HTML. Do NOT use for informational pages, blog posts, pure visual-design requests, or multi-product brand-hub homepages of an already-trusted brand (see references/reality-check.md) — those need one CTA per product block, not one for the whole page."
 license: "Proprietary. LICENSE.txt has complete terms."
 compatibility: "Universal. Optional script (scripts/generate_prompts.py) needs Python 3 stdlib only — no packages, no network access."
 metadata:
   author: "Roberto Adrian"
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Conversion Landingpage Builder
@@ -18,6 +18,16 @@ undifferentiated block with diluted messaging and more than one competing call-t
 
 ## Workflow
 
+0. **Scope check first.** This formula is for a single-offer page from a brand the visitor
+   does not yet trust — one product, one CTA, cold or lukewarm traffic that needs
+   convincing. If the request is actually a multi-product hub homepage for an already-known
+   brand (the visitor is choosing between several offers, not deciding whether to trust the
+   brand at all), this formula is the wrong tool as-is — see `references/reality-check.md`
+   for what to do instead (one CTA per product block, drop problem/solution, testimonials
+   and tiered pricing become optional). Checked against Windows, Apple, Tesla,
+   Mercedes-Benz and Nvidia — none of them use the single-CTA/problem-solution formula,
+   because none of them are single-offer trust-building pages. If ambiguous, ask which job
+   the page has to do before picking a structure.
 1. **Collect the brief before writing anything.** You need, at minimum: product name,
    category (e.g. "B2B SaaS"), one-line audience description, the problem in one sentence,
    the solution in one sentence, 3-4 features each paired with a benefit, exactly 3
@@ -102,6 +112,8 @@ for a real deliverable.
 
 - `references/section-formulas.md` — the exact formula, required fields and constraints for
   each of the 7 sections, plus the intake JSON schema used by the script.
+- `references/reality-check.md` — the 5-homepage check this formula was validated against,
+  what held up, what didn't, and the scope rule for hub-style homepages.
 - `scripts/generate_prompts.py` — generates and validates the 7-prompt sequence from a JSON
   brief; run with `--example` to see it against the worked example above, or point it at
   your own brief file.
