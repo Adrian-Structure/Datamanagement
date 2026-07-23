@@ -5,7 +5,7 @@ license: "Proprietary. LICENSE.txt has complete terms."
 compatibility: "Universal. Optional script (scripts/generate_prompts.py) needs Python 3 stdlib only — no packages, no network access."
 metadata:
   author: "Roberto Adrian"
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Website Builder
@@ -24,26 +24,35 @@ That's what's kept here; copywriting theory is not.
    conversion page, multi-service vertical site, multi-product brand hub — and only the
    first two are built by this skill. See `references/scope-and-reality-check.md`. If
    ambiguous, ask which job the page has to do.
-1. **Apply the design corrective, always, regardless of shape.** `references/design-corrective.md`
+1. **Consult `website-dsgvo` before building anything, not just before go-live.** Every
+   page this skill builds is a website: Impressum/Datenschutz are not a bolt-on step at
+   the end, they're part of the build from the first pass. If `website-dsgvo` is
+   installed, use its actual scaffolds (`assets/impressum-geruest.md`,
+   `assets/datenschutzerklaerung-geruest.md`) as the legal-page content from the start
+   instead of inventing ad-hoc placeholder text — a hand-rolled placeholder is exactly how
+   a "[Firmenname], [Straße]" stub ends up shipped instead of a structurally correct
+   scaffold. If `website-dsgvo` is not installed in this environment, say so explicitly to
+   the user before building — do not silently proceed without it.
+2. **Apply the design corrective, always, regardless of shape.** `references/design-corrective.md`
    lists the default failure pattern (purple/indigo gradient, Inter/Poppins/Montserrat,
    uniform max border-radius, shadow on every card, centered-hero-over-gradient-blob,
    icon-in-circle feature grids) and the deliberate choices to make instead. Skipping this
    step is the single biggest reason a build looks AI-generated.
-2. **Single-offer path.** Collect a brief per `references/single-offer-schema.md` and run
+3. **Single-offer path.** Collect a brief per `references/single-offer-schema.md` and run
    `${CLAUDE_SKILL_DIR}/scripts/generate_prompts.py` against it. The script validates the
    brief and emits 7 section-scoped prompts (hero → problem/solution → features+benefits →
    how-it-works → social proof → pricing → final CTA + footer), each ending in a scope-lock
    sentence, each using exactly one CTA phrase throughout. Do not hand-write these prompts —
    the script is the enforcement mechanism; prose alone drifts.
-3. **Multi-service vertical path.** Fill the one config file described in
+4. **Multi-service vertical path.** Fill the one config file described in
    `references/multipage-config-schema.md` (the only file that changes per client/industry),
    then send one prompt against the fixed technical blueprint in the same file. Re-skinning
    for a different client or industry = edit only that config file, then tell the agent the
    config changed and to adapt the site accordingly — do not rebuild from scratch.
-4. **Legal layer, every time, either path.** Hand off to the `website-dsgvo` skill for
-   Impressum, Datenschutzerklärung and cookie-consent review before go-live. Do not
-   duplicate that check here. If `website-dsgvo` is not installed in this environment, say
-   so explicitly — do not silently skip it.
+5. **Legal layer, again, before go-live.** Re-run `website-dsgvo` in PRÜFEN mode against
+   the finished build (not just step 1's up-front scaffold) — content and third-party
+   services added during the build (fonts, embeds, forms) need their own check. Do not
+   duplicate that skill's logic here.
 
 ## What this produces — and what it doesn't
 
